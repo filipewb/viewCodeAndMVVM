@@ -30,7 +30,7 @@ class CustomTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.imageUserImageView.clipsToBounds = true
-        self.imageUserImageView.layer?.cornerRadius = self.imageUserImageView.frame.height / 2
+        self.imageUserImageView.layer.cornerRadius = self.imageUserImageView.frame.height / 2
     }
     
     func setupCell(user: User) {
