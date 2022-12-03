@@ -15,6 +15,10 @@ class CustomCellViewModel {
         self.data = data
     }
     
+    public var getUser: User {
+        return self.data
+    }
+    
     public var getName: String {
         return DescriptionCustomCell.name.rawValue + self.data.name
     }
@@ -27,7 +31,7 @@ class CustomCellViewModel {
         return DescriptionCustomCell.salary.rawValue + self.data.salary
     }
     
-    public var getAge: Int {
+    public var getAge: String {
         return DescriptionCustomCell.age.rawValue + String(self.data.age)
     }
     
@@ -38,5 +42,5 @@ class CustomCellViewModel {
     public var getIsEnableHeart: Bool {
         return self.data.isEnableHeart
     }
-
+    
 }
