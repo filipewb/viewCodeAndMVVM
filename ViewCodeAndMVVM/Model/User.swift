@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-struct Pessoa {
+struct User {
     var name: String
     var age: Int
     var profession: String

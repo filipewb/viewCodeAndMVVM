@@ -12,8 +12,10 @@
 		8AEA8675293B81010027E5E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEA8674293B81010027E5E8 /* ViewController.swift */; };
 		8AEA867A293B81030027E5E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AEA8679293B81030027E5E8 /* Assets.xcassets */; };
 		8AEA867D293B81030027E5E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AEA867B293B81030027E5E8 /* LaunchScreen.storyboard */; };
-		8AEA8686293B84FD0027E5E8 /* Pessoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEA8685293B84FD0027E5E8 /* Pessoa.swift */; };
+		8AEA8686293B84FD0027E5E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEA8685293B84FD0027E5E8 /* User.swift */; };
 		8AEA868A293B859A0027E5E8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEA8689293B859A0027E5E8 /* ViewModel.swift */; };
+		8AEA868E293B8EA40027E5E8 /* CustomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEA868D293B8EA40027E5E8 /* CustomCellViewModel.swift */; };
+		8AEA8690293B919B0027E5E8 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEA868F293B919B0027E5E8 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +26,10 @@
 		8AEA8679293B81030027E5E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AEA867C293B81030027E5E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AEA867E293B81030027E5E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8AEA8685293B84FD0027E5E8 /* Pessoa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pessoa.swift; sourceTree = "<group>"; };
+		8AEA8685293B84FD0027E5E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8AEA8689293B859A0027E5E8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		8AEA868D293B8EA40027E5E8 /* CustomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellViewModel.swift; sourceTree = "<group>"; };
+		8AEA868F293B919B0027E5E8 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		8AEA866F293B81010027E5E8 /* ViewCodeAndMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				8AEA868B293B8E6D0027E5E8 /* Cell */,
 				8AEA8688293B85790027E5E8 /* View */,
 				8AEA8687293B85700027E5E8 /* ViewModel */,
 				8AEA8684293B84E70027E5E8 /* Model */,
@@ -73,7 +78,7 @@
 		8AEA8684293B84E70027E5E8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8AEA8685293B84FD0027E5E8 /* Pessoa.swift */,
+				8AEA8685293B84FD0027E5E8 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -92,6 +97,23 @@
 				8AEA8674293B81010027E5E8 /* ViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8AEA868B293B8E6D0027E5E8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8AEA868C293B8E7F0027E5E8 /* ViewModel */,
+				8AEA868F293B919B0027E5E8 /* CustomTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8AEA868C293B8E7F0027E5E8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8AEA868D293B8EA40027E5E8 /* CustomCellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,9 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AEA868A293B859A0027E5E8 /* ViewModel.swift in Sources */,
+				8AEA868E293B8EA40027E5E8 /* CustomCellViewModel.swift in Sources */,
 				8AEA8675293B81010027E5E8 /* ViewController.swift in Sources */,
+				8AEA8690293B919B0027E5E8 /* CustomTableViewCell.swift in Sources */,
 				8AEA8671293B81010027E5E8 /* AppDelegate.swift in Sources */,
-				8AEA8686293B84FD0027E5E8 /* Pessoa.swift in Sources */,
+				8AEA8686293B84FD0027E5E8 /* User.swift in Sources */,
 				8AEA8673293B81010027E5E8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
