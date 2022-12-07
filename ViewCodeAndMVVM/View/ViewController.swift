@@ -6,6 +6,13 @@ class ViewController: UIViewController {
     
     let viewModel: ViewModel = ViewModel()
     
+    var screen: HomeScreenView?
+    
+    override func loadView() {
+        self.screen = HomeScreenView()
+        self.view = screen
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
@@ -13,9 +20,6 @@ class ViewController: UIViewController {
         self.tableView.separatorStyle = .none
         self.tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
     }
-    
-    
-
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
