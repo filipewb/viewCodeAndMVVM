@@ -19,6 +19,7 @@ class CustomTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
         self.screen.heartButton.addTarget(self, action: #selector(self.tappedHeartButton), for: .touchUpInside)
         self.screen.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(self.screen)

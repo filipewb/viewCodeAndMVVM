@@ -37,6 +37,7 @@ class CustomTableViewCellScreen: UIView {
     lazy var heartButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
         return button
     }()
 
@@ -62,13 +63,13 @@ class CustomTableViewCellScreen: UIView {
     private func configConstraints() {
         NSLayoutConstraint.activate([
             self.userImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 18),
-            self.userImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
+            self.userImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             self.userImageView.heightAnchor.constraint(equalToConstant: 128),
             self.userImageView.widthAnchor.constraint(equalToConstant: 128),
             
             self.nameLabel.topAnchor.constraint(equalTo: self.userImageView.topAnchor),
-            self.nameLabel.trailingAnchor.constraint(equalTo: self.userImageView.leadingAnchor, constant: -12),
-            self.nameLabel.leadingAnchor.constraint(equalTo: self.heartButton.trailingAnchor, constant: 5),
+            self.nameLabel.leadingAnchor.constraint(equalTo: self.userImageView.trailingAnchor, constant: 12),
+            self.nameLabel.trailingAnchor.constraint(equalTo: self.heartButton.leadingAnchor, constant: -5),
             
             self.ageLabel.topAnchor.constraint(equalTo: self.nameLabel.bottomAnchor, constant: 10),
             self.ageLabel.trailingAnchor.constraint(equalTo: self.nameLabel.trailingAnchor),
@@ -83,7 +84,7 @@ class CustomTableViewCellScreen: UIView {
             self.salaryLabel.leadingAnchor.constraint(equalTo: self.nameLabel.leadingAnchor),
             
             self.heartButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 18),
-            self.heartButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
+            self.heartButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
             self.heartButton.heightAnchor.constraint(equalToConstant: 22),
             self.heartButton.widthAnchor.constraint(equalToConstant: 22),
             
