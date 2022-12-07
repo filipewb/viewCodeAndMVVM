@@ -43,4 +43,8 @@ class CustomCellViewModel {
         return self.data.isEnableHeart
     }
     
+    public func exchangeHeartState(_ value: Bool) {
+        self.data.isEnableHeart = value
+    }
+    
 }

@@ -55,8 +55,10 @@ class CustomTableViewCell: UITableViewCell {
         
         if _viewModel.getIsEnableHeart {
             self.heartButton.tintColor = .blue
+            self.viewModel?.exchangeHeartState(false)
         } else {
             self.heartButton.tintColor = .red
+            self.viewModel?.exchangeHeartState(true)
         }
         self.delegate?.tappedHeartButton(_viewModel.getUser)
     }
