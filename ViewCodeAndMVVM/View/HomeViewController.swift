@@ -1,8 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
+class HomeViewController: UIViewController {
     
     let viewModel: ViewModel = ViewModel()
     
@@ -10,19 +8,17 @@ class ViewController: UIViewController {
     
     override func loadView() {
         self.screen = HomeScreenView()
+        self.screen?.setupTableViewProtocols(delegate: self, dataSource: self)
         self.view = screen
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.separatorStyle = .none
-        self.tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
+
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.numberOfRows
@@ -38,9 +34,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(self.viewModel.getName(indexPath: indexPath))
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 164
+    }
 }
 
-extension ViewController: CustomTableViewCellDelegate {
+extension HomeViewController: CustomTableViewCellDelegate {
     func tappedHeartButton(_ user: User) {
         self.viewModel.exchangeHeartState(user)
     }

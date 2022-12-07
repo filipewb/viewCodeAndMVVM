@@ -6,7 +6,7 @@ class HomeScreenView: UIView {
         let tb = UITableView()
         tb.translatesAutoresizingMaskIntoConstraints = false
         tb.separatorStyle = .none
-        tb.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
+        tb.register(CustomTableViewCell.self, forCellReuseIdentifier: "CustomTableViewCell")
         return tb
     }()
 
