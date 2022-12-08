@@ -1,21 +1,41 @@
 import UIKit
 
+protocol ViewModelDelegate: AnyObject {
+    func successRequest()
+    func errorRequest()
+}
+
 class ViewModel {
     
+    private let service: Service = Service()
     private var listUser:[User] = []
     
-    init() {
-        self.configArrayUser()
+    private weak var delegate: ViewModelDelegate?
+    
+    public func delegate(delegate: ViewModelDelegate?) {
+        self.delegate = delegate
     }
     
-    private func configArrayUser() {
-        self.listUser.append(User(name: "Caio", age: 30, profession: "Developer iOS", salary: "20.000,00", imageUser: UIImage(systemName: "person.circle") ?? UIImage(), isEnableHeart: true, identifier: 0))
-        self.listUser.append(User(name: "Fabricio", age: 30, profession: "Developer iOS", salary: "20.000,00", imageUser: UIImage(systemName: "person.circle") ?? UIImage(), isEnableHeart: true, identifier: 1))
-        self.listUser.append(User(name: "Alencar", age: 30, profession: "Developer iOS", salary: "20.000,00", imageUser: UIImage(systemName: "person.circle") ?? UIImage(), isEnableHeart: true, identifier: 2))
-        self.listUser.append(User(name: "Filipe", age: 30, profession: "Developer iOS", salary: "20.000,00", imageUser: UIImage(systemName: "person.circle") ?? UIImage(), isEnableHeart: true, identifier: 3))
-        self.listUser.append(User(name: "Angela", age: 30, profession: "Developer iOS", salary: "20.000,00", imageUser: UIImage(systemName: "person.circle") ?? UIImage(), isEnableHeart: true, identifier: 4))
-        self.listUser.append(User(name: "Mario", age: 30, profession: "Developer iOS", salary: "20.000,00", imageUser: UIImage(systemName: "person.circle") ?? UIImage(), isEnableHeart: true, identifier: 5))
-        self.listUser.append(User(name: "Jonas", age: 30, profession: "Developer iOS", salary: "20.000,00", imageUser: UIImage(systemName: "person.circle") ?? UIImage(), isEnableHeart: true, identifier: 6))
+    public func fetchAllRequest() {
+        service.getUser() { success, error in
+            if let _success = success {
+                self.listUser = _success.group
+                self.delegate?.successRequest()
+            } else {
+                self.delegate?.errorRequest()
+            }
+        }
+    }
+    
+    public func fetchAllRequestMock() {
+        service.getUserFromJson(fromFileNamed: "user") { success, error in
+            if let _success = success {
+                self.listUser = _success.group
+                self.delegate?.successRequest()
+            } else {
+                self.delegate?.errorRequest()
+            }
+        }
     }
     
     public var numberOfRows: Int {

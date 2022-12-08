@@ -26,6 +26,10 @@ class HomeScreenView: UIView {
         self.tableView.dataSource = dataSource
     }
     
+    public func reloadTableView() {
+        self.tableView.reloadData()
+    }
+    
     private func configConstraints() {
         NSLayoutConstraint.activate([
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),

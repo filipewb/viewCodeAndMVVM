@@ -8,13 +8,14 @@ class HomeViewController: UIViewController {
     
     override func loadView() {
         self.screen = HomeScreenView()
-        self.screen?.setupTableViewProtocols(delegate: self, dataSource: self)
+
         self.view = screen
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.viewModel.delegate(delegate: self)
+        self.viewModel.fetchAllRequest()
     }
 }
 
@@ -41,9 +42,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: CustomTableViewCellDelegate {
+    
     func tappedHeartButton(_ user: User) {
         self.viewModel.exchangeHeartState(user)
     }
     
+}
 
+extension HomeViewController: ViewModelDelegate {
+    func successRequest() {
+        self.screen?.setupTableViewProtocols(delegate: self, dataSource: self)
+        self.screen?.reloadTableView()
+    }
+    
+    func errorRequest() {
+        print("error ao realizar a request")
+    }
 }

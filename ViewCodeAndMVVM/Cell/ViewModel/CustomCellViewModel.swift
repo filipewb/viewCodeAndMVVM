@@ -35,7 +35,7 @@ class CustomCellViewModel {
         return DescriptionCustomCell.age.rawValue + String(self.data.age)
     }
     
-    public var getUserImage: UIImage {
+    public var getUserImage: String {
         return self.data.imageUser
     }
     

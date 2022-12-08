@@ -1,0 +1,40 @@
+{
+    "group" : [
+        {
+            "name": "Filipe",
+            "age": 25,
+            "profession": "Desenvolvedor",
+            "salary": "1.000,00",
+            "imageUser": "person.circle",
+            "isEnableHeart": true,
+            "identifier": 0
+        },
+        {
+            "name": "Angela",
+            "age": 25,
+            "profession": "Desenvolvedor",
+            "salary": "3.000,00",
+            "imageUser": "person.circle",
+            "isEnableHeart": false,
+            "identifier": 0
+        },
+        {
+            "name": "Matheus",
+            "age": 25,
+            "profession": "Desenvolvedor",
+            "salary": "1.000,00",
+            "imageUser": "person.circle",
+            "isEnableHeart": true,
+            "identifier": 0
+        },
+        {
+            "name": "Jovana",
+            "age": 25,
+            "profession": "Desenvolvedor",
+            "salary": "56.000,00",
+            "imageUser": "person.circle",
+            "isEnableHeart": false,
+            "identifier": 0
+        },
+    ]
+}
